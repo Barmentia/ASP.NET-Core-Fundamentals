@@ -9,6 +9,7 @@ namespace OdeToFood.Entities
         Japanese,
         American
     }
+
     public class Restaurant
     {
         public int Id { get; set; }
