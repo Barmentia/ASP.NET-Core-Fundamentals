@@ -1,9 +1,0 @@
-D:\Projects\Git\OdeToFood\OdeToFood\bin\Debug\netcoreapp1.1\OdeToFood.deps.json
-D:\Projects\Git\OdeToFood\OdeToFood\bin\Debug\netcoreapp1.1\OdeToFood.runtimeconfig.json
-D:\Projects\Git\OdeToFood\OdeToFood\bin\Debug\netcoreapp1.1\OdeToFood.runtimeconfig.dev.json
-D:\Projects\Git\OdeToFood\OdeToFood\bin\Debug\netcoreapp1.1\OdeToFood.dll
-D:\Projects\Git\OdeToFood\OdeToFood\bin\Debug\netcoreapp1.1\OdeToFood.pdb
-D:\Projects\Git\OdeToFood\OdeToFood\obj\Debug\netcoreapp1.1\OdeToFood.csprojResolveAssemblyReference.cache
-D:\Projects\Git\OdeToFood\OdeToFood\obj\Debug\netcoreapp1.1\OdeToFood.AssemblyInfo.cs
-D:\Projects\Git\OdeToFood\OdeToFood\obj\Debug\netcoreapp1.1\OdeToFood.dll
-D:\Projects\Git\OdeToFood\OdeToFood\obj\Debug\netcoreapp1.1\OdeToFood.pdb
