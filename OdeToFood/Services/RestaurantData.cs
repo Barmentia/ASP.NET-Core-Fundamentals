@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using OdeToFood.Entities;
 using System.Linq;
+using System;
 
 namespace OdeToFood.Services
 {
@@ -9,6 +10,7 @@ namespace OdeToFood.Services
         IEnumerable<Restaurant> GetAll();
         Restaurant Get(int id);
         void Add(Restaurant newRestaurant);
+        void Commit();
     }
 
     public class SqlRestaurantData : IRestaurantData
@@ -23,6 +25,10 @@ namespace OdeToFood.Services
         public void Add(Restaurant newRestaurant)
         {
             _context.Restaurants.Add(newRestaurant);
+        }
+
+        public void Commit()
+        {
             _context.SaveChanges();
         }
 
@@ -55,6 +61,11 @@ namespace OdeToFood.Services
         {
             newRestaurant.Id = _restaurants.Max(r => r.Id) + 1;
             _restaurants.Add(newRestaurant);
+        }
+
+        public void Commit()
+        {
+            // ... no operational
         }
 
         public Restaurant Get(int id)
