@@ -8,6 +8,7 @@ using OdeToFood.Services;
 using Microsoft.AspNetCore.Routing;
 using OdeToFood.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace OdeToFood
 {
@@ -37,6 +38,10 @@ namespace OdeToFood
             // Scope --> There should be on instance of this service for each HTTP request.
             services.AddScoped<IRestaurantData, SqlRestaurantData>();
             services.AddDbContext<OdeToFoodDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("OdeToFood")));
+
+            //It adds the core identity framework services. 
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<OdeToFoodDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,18 +57,10 @@ namespace OdeToFood
             //app.UseFileServer();
 
             //app.UseMvcWithDefaultRoute();
+
+            app.UseIdentity();
+
             app.UseMvc(ConfigureRoutes);
-
-            //app.UseWelcomePage(new WelcomePageOptions
-            //{
-            //    Path = "/welcome"
-            //});
-
-            //app.Run(async (context) =>
-            //{
-            //    var message = greeter.GetGreeting();
-            //    await context.Response.WriteAsync(message);
-            //});
 
             app.Run(ctx => ctx.Response.WriteAsync("Not found"));
         }
