@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
@@ -54,15 +53,10 @@ namespace OdeToFood
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseFileServer();
-
-            //app.UseMvcWithDefaultRoute();
-
+            app.UseFileServer();
+            app.UseNodeModules(env.ContentRootPath);            
             app.UseIdentity();
-
             app.UseMvc(ConfigureRoutes);
-
-            app.Run(ctx => ctx.Response.WriteAsync("Not found"));
         }
 
         private void ConfigureRoutes(IRouteBuilder routeBuilder)

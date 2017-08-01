@@ -8,12 +8,16 @@
         <div>
             @await Component.InvokeAsync("LoginLogout")
         </div>
-        <div>
+
+        <div class="container">
             @RenderBody()
+            <footer>
+                @RenderSection("footer", required: false)
+                @await Component.InvokeAsync("Greeting")
+            </footer>
         </div>
-        <footer>
-            @RenderSection("footer", required: false)
-            @await Component.InvokeAsync("Greeting")
-        </footer>
+        <script src="/node_modules/jquery/dist/jquery.js"></script>
+        <script src="/node_modules/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="/node_modules/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     </body>
 </html>

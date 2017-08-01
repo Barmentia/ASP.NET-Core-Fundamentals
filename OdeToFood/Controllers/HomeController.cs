@@ -72,15 +72,9 @@ namespace OdeToFood.Controllers
         }
 
         [HttpGet]
-        public IActionResult Create(int id)
+        public IActionResult Create()
         {
-            var model = _restaurantData.Get(id);
-            if (model == null)
-            {
-                return RedirectToAction(nameof(Index));
-            }
-
-            return View(model);
+            return View();
         }
 
         [HttpPost]
